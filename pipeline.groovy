@@ -36,8 +36,10 @@ pipeline {
                 mvn ${ goal }
                 """
             }
-            steps{
+            steps('Now Exiting pipeline...'){
+                bat """
                 echo 'Some varaible is printing ${some_var}'
+                """
             }
         }
     }
