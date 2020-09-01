@@ -32,7 +32,7 @@ pipeline {
         stage('Starting Selected Lifecycle...') {
             steps {
                 bat """
-                echo 'Maven ${ goal } lifcycle Starting...'
+                echo Maven ${ goal } lifcycle Starting...
                 mvn ${ goal }
                 """
             }
@@ -40,7 +40,7 @@ pipeline {
         stage('Now Exiting pipeline...'){
             steps {
                 bat """
-                echo 'Some varaible is printing ${some_var}'
+                echo Some varaible is printing: ${some_var}
                 """
             }
         }
