@@ -14,7 +14,7 @@ pipeline {
         stage('Retrieving code from SCM') {
             steps {
                 echo 'Connecting to github...'
-                git branch 'master', url: 'https://github.com/MayankChowdhary/EMSDemo.git'
+                git branch: 'master', url: 'https://github.com/MayankChowdhary/EMSDemo.git'
             }
         }
         
