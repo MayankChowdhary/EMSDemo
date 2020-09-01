@@ -40,7 +40,7 @@ pipeline {
         stage('Now Exiting pipeline...'){
             steps {
                 bat """
-                Some varaible is printing: ${some_var}
+                echo Some varaible is printing: ${some_var}
                 """
             }
         }
