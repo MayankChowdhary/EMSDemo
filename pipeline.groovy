@@ -36,11 +36,14 @@ pipeline {
                 mvn ${ goal }
                 """
             }
-            steps{
+        }
+        stage('Now Exiting pipeline...'){
+            steps {
                 bat """
                 echo 'Some varaible is printing ${some_var}'
                 """
             }
         }
+    
     }
 }
