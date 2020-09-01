@@ -34,8 +34,10 @@ pipeline {
                 bat """
                 echo 'Maven ${ goal } lifcycle Starting...'
                 mvn ${ goal }
-                echo 'Some varaible is printing ${some_var}'
                 """
+            }
+            steps{
+                echo 'Some varaible is printing ${some_var}'
             }
         }
     }
