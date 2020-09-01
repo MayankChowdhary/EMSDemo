@@ -26,11 +26,11 @@ pipeline {
                 """
             }
         }
-        stage('Start Installing...') {
+        stage('Starting Selected Lifecycle...') {
             steps {
-                echo 'Maven Install lifcycle Starting...'
+                echo 'Maven ${ goal } lifcycle Starting...'
                 bat """
-                mvn install
+                mvn ${ goal }
                 """
             }
         }
