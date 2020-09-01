@@ -4,17 +4,34 @@ pipeline {
             label 'master'
         }
     }
+    tools{
+
+        maven 'Apache Maven'
+        jdk 'Java8'
+    }
 
     stages {
-        stage('This is first pipeline stage') {
+        stage('Retrieving code from SCM') {
             steps {
-                echo 'Hello World'
+                echo 'Connecting to github...'
+                git branch 'master', url: 'git@github.com:MayankChowdhary/EMSDemo.git'
             }
         }
         
-        stage('This is second pipeline stage') {
+        stage('Start Compiling') {
             steps {
-                echo 'Hello Second stage'
+                echo 'Maven Compile lifcycle Starting...'
+                bat """
+                mvn compile
+                """
+            }
+        }
+        stage('Start Installing...') {
+            steps {
+                echo 'Maven Install lifcycle Starting...'
+                bat """
+                mvn install
+                """
             }
         }
     }
