@@ -4,6 +4,9 @@ pipeline {
             label 'master'
         }
     }
+    environment{
+        some_var = 'I am variable'
+    }
     tools{
 
         maven 'Apache Maven'
@@ -31,6 +34,7 @@ pipeline {
                 bat """
                 echo 'Maven ${ goal } lifcycle Starting...'
                 mvn ${ goal }
+                echo 'Some varaible is printing ${some_var}'
                 """
             }
         }
