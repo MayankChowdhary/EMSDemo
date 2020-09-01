@@ -28,8 +28,8 @@ pipeline {
         }
         stage('Starting Selected Lifecycle...') {
             steps {
-                echo 'Maven ${ goal } lifcycle Starting...'
                 bat """
+                echo 'Maven ${ goal } lifcycle Starting...'
                 mvn ${ goal }
                 """
             }
